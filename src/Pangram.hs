@@ -1,4 +1,8 @@
 module Pangram (isPangram) where
 
+import qualified Data.Char as Char
+
 isPangram :: String -> Bool
-isPangram text = error "You need to implement this function."
+isPangram str = all contains ['a' .. 'z']
+  where
+    contains c = Char.toLower c `elem` map Char.toLower str
